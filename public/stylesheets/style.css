@@ -40,7 +40,7 @@ html,body {
 
 .app .menu-card {
   width: 100%;
-  margin-top: 16px;
+  margin: 16px 0;
 }
 
 .app .menu-card .image img{
@@ -57,5 +57,18 @@ html,body {
 }
 
 .app ul li{
-  margin-top: 16px;
+  margin: 16px 0;
+}
+
+.player{
+  display: none;
+}
+
+.main-content{
+  width: 100%;
+  text-align: center;
+}
+
+.main-content .card{
+  width: 100%;
 }

@@ -1,28 +1,29 @@
 extends layout
 
 block content
-
+    audio(id="player", class="player")
     div(class="app")
         ul(class="menus")
             li
                 div(class="ui card menu-card")
                     div(class="image")
-                        img(src="/images/location.gif")
+                        img(src= cam_path)
                     div(class="extra content")
-                        button(class="ui button right floated") 我在哪
+                        button(class="ui button positive right floated", id="locationButton") 我在哪
 
             li
                 div(class="ui card menu-card")
                     div(class="image")
-                        img(src="/images/location.gif")
+                        img(src="/images/eyeglass.png")
                     div(class="extra content")
-                        button(class="ui button right floated") 帮助我
+                        a(href="app/help")
+                            button(class="ui button positive right floated", id="helpButton") 帮助我
 
             li
                 div(class="ui card menu-card")
                     div(class="image")
-                        img(src="/images/location.gif")
+                        img(src="/images/map.jpg")
                     div(class="extra content")
-                        button(class="ui button right floated") 带我走
+                        button(class="ui button positive right floated", id="navigationButton") 带我走
 
 
