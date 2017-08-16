@@ -24,6 +24,7 @@ router.get('/app/help', function (req, res, next) {
   exec('raspistill -o public/camera/cam.jpg -t 1');
   if (fs.existsSync("public"+cam_path)){
     checkImage("public"+cam_path, function (data) {
+      console.log(data);
       var tags = data.data.tags;
       var tags_describe = "";
       tags.map(function (tag) {
