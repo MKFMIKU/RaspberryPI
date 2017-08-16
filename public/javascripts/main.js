@@ -9,9 +9,9 @@ function readText(str) {
   $("#player")[0].play();
 }
 
-window.onload = function () {
+$(function () {
   init();
-};
+});
 
 function onLocationComplete(data) {
   app.address = data.formattedAddress;
@@ -19,6 +19,14 @@ function onLocationComplete(data) {
 
 function onLocationError(data) {
   app.err = data;
+}
+
+function initEvent() {
+  var url = window.location.href.split('/');
+  var type = url[url.length-1];
+  if (type == 'help') {
+    readText($('#recognize').text());
+  }
 }
 
 function init() {
@@ -44,6 +52,8 @@ function init() {
   });
 
   initUI();
+
+  initEvent();
 }
 
 function initUI() {

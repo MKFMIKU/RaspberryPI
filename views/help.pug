@@ -1,10 +1,11 @@
 extends layout
 
 block content
+    audio(id="player", class="player")
     div(class="main-content")
         div(class="ui card")
             div(class="image")
-                img(src="/images/image.png" id="shower")
+                img(src= cam_path, id="shower")
             div(class="content")
                 div(class="description")
-                    p(id="recognize") 识别中
+                    p(id="recognize")= tag
