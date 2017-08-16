@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 
-var tencentyoutuyun = require('../nodejs_sdk'),
+var tencentyoutuyun = require('tencentyoutuyun'),
   youtuconf = tencentyoutuyun.conf,
   youtu = tencentyoutuyun.youtu;
 youtuconf.setAppInfo("10094755", "AKIDyqW0IOR3azEGMdwtlQuEMI5h3ILCEKbg",
