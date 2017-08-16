@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var fs = require('fs');
+var exec = require('child_process').exec;
+
 
 var tencentyoutuyun = require('tencentyoutuyun'),
   youtuconf = tencentyoutuyun.conf,
@@ -20,6 +21,7 @@ router.get('/app', function (req, res, next) {
 router.get('/app/help', function (req, res, next) {
   var base = "/images/image.png";
   var cam_path = "/camera/cam.jpg";
+  exec('raspistill -o public/camera/cam.png -t 1');
   if (fs.existsSync("public"+cam_path)){
     checkImage("public"+cam_path, function (data) {
       var tags = data.data.tags;
@@ -27,7 +29,6 @@ router.get('/app/help', function (req, res, next) {
       tags.map(function (tag) {
         tags_describe += tag.tag_name+',';
       });
-
       res.render('help', {cam_path: cam_path, tag: "视野中有："+tags_describe});
     });
   } else {
